@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/first_title"
+            android:text="@string/mode_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_purple" />
+
+        <RadioGroup
+            android:id="@+id/reportGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/title"
+                android:text=">>上报模式设置:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                style="@style/zebra_block"
+                android:text="定量上传"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/quantifyCb"/>
+
+            <LinearLayout
+                style="@style/zebra_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/quantifyEt"
+                    android:hint="请输入触发上传的阀值,大于50,小于300" />
+            </LinearLayout>
+
+            <CheckBox
+                style="@style/block"
+                android:text="定时上传"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fixedTimeCb" />
+            <LinearLayout
+                style="@style/block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="设置定时时间:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="时:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="4"
+                            android:id="@+id/fixedTimeHourEt"
+                            android:layout_weight="1"
+                            android:hint="24小时制" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="分:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="4"
+                            android:id="@+id/fixedTimeMinuteEt"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                        <TextView
+                            android:text="秒:"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="4"
+                            android:id="@+id/fixedTimeSecondEt"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <CheckBox
+                style="@style/zebra_block"
+                android:text="周期性上传"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/periodicityCb"/>
+            <LinearLayout
+                style="@style/zebra_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="设置周期时长,在此周期内只会上报一次数据"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/periodicityEt"
+                    android:hint="单位为秒.最大值为半天,最小值为5分钟" />
+            </LinearLayout>
+
+            <!--<RadioButton-->
+                <!--style="@style/block"-->
+                <!--android:text="推送上传"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/pushCb" />-->
+
+            <CheckBox
+                style="@style/zebra_block"
+                android:text="启动app上传"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/launchCb" />
+            <CheckBox
+                style="@style/block"
+                android:text="退出app上传"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/exitCb" />
+        </RadioGroup>
+
+        <TextView
+            style="@style/title"
+            android:text=">>缓存模式设置:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            style="@style/zebra_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <CheckBox
+                android:text="时间间隔缓存"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cacheTimeCb" />
+
+            <TextView
+                android:text="在此设置的时间间隔内只会触发一次存库操作"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/cacheTimeEt"
+                android:hint="单位为毫秒" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <CheckBox
+                android:text="定量缓存"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cacheQuantifyCb" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/cacheQuantifyEt"
+                android:hint="最大值为10" />
+
+            <TextView
+                android:text="(注:缓存模式能设置多个,如多个同时设置,则需要多个缓存条件同时满足才执行存库操作)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

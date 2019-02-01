@@ -1,0 +1,26 @@
+ext {
+    // 配置demo以及所有sdk的版本名称,上传库到私有maven仓库时需配置此项
+    // 名称中以“-beta”结尾将会上传到maven快照仓库中，去掉即可上传到正式发布仓库
+    // 上次正式版本：4.0.0
+    // 上次灰度版本：2.0.2-rc
+    // 上次beta版本号：4.0.18-beta
+    // 上次bugfix版本号：4.0.1-bugfix
+    VERSION_NAME = '5.0.37'
+    // 配置demo以及所有sdk的版本Code值
+    VERSION_CODE = 86
+
+    // 编译分支名称，此值由Jenkins构建任务根据构建的版本自动修改，请勿改动
+    BUILD_BRANCH_NAME='develop'
+
+    // 此处配置自己项目applicationId
+    android = [
+            applicationId           : "com.eebbk.behavior.demo",
+    ]
+
+    // 此处配置自己项目特有的依赖包
+    dependencies = [
+            // demo
+            "appcompat-v7"          : 'com.android.support:appcompat-v7:26.1.0',
+            "gms"                   : 'com.google.android.gms:play-services-appindexing:8.4.0',
+    ]
+}

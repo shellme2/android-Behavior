@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.eebbk.behavior.demo.demonstration.EventActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:text="@string/event_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onEvent"/>
+
+        <Button
+            android:text="@string/page_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onPage"/>
+
+        <Button
+            android:text="@string/mode_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onMode"/>
+
+        <Button
+            android:text="@string/module_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onModuleSwitch"/>
+
+        <Button
+            android:text="@string/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onLog"/>
+
+        <Button
+            android:text="@string/menu_query_local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onQuery"/>
+
+        <Button
+            android:text="@string/menu_query_config_local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onQueryConfig"/>
+
+        <Button
+            android:text="@string/menu_error_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onMenuErrorCode"/>
+
+        <Button
+            android:text="@string/menu_crash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onMenuCrash"/>
+
+        <Button
+            android:text="@string/log_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onLogView"/>
+
+    </LinearLayout>
+</ScrollView>
+

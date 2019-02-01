@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/first_title"
+        android:text="@string/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_purple" />
+
+    <Button
+        android:text="@string/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSearch"/>
+
+    <Button
+        android:text="@string/search_all_log_in_sdcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSearchAll"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/magnify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onMagnify"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="@string/lessen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onLessen"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars = "vertical"
+        android:id="@+id/logTv" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+//apply plugin:'bbk_checker'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.0"
+
+    // 签名
+    signingConfigs {
+        release {
+            keyAlias bfcBuildConfig.signing["keyAlias"]
+            keyPassword bfcBuildConfig.signing["keyPassword"]
+            storeFile file('keystore.jks')
+            storePassword bfcBuildConfig.signing["storePassword"]
+        }
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion bfcBuildConfig.minSdkVersion
+        targetSdkVersion bfcBuildConfig.targetSdkVersion
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        //ndk编译生成.so文件
+        ndk {
+            moduleName "crashtest"         //生成的so名字
+            abiFilters "armeabi", "armeabi-v7a", "x86"  //输出指定三种abi体系结构下的so库。
+        }
+    }
+
+    buildTypes {
+        release {
+            // zipAlign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            // 混淆
+            minifyEnabled false
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // 修改apk名称，并放到apk目录下
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('-release.apk')) {
+                def fileName = outputFile.name
+                fileName = fileName.replace("-release.apk", ".apk")
+                output.outputFile = new File(file('./../apk'), fileName)
+                println "输出文件位置： " + output.outputFile
+            }
+        }
+    }
+
+    sourceSets.main {
+        jni.srcDirs = []
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+//    testCompile bfcBuildConfig.deps["junit"]
+    compile rootProject.ext.dependencies["appcompat-v7"]
+//    compile rootProject.ext.dependencies["gms"]
+
+    compile project(':BfcBehaviorSdk')
+//    compile 'com.eebbk.bfc:bfc-behavior:5.0.21-beta'
+    compile bfcBuildConfig.deps["bfc-blockcanary"]
+    compile bfcBuildConfig.deps["bfc-leakcanary"]
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/first_title"
+        android:text="@string/menu_error_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_purple" />
+
+    <TextView
+        style="@style/title"
+        android:text="@string/error_code_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/errorCodeEt"/>
+
+    <Button
+        android:text="@string/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSearch"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/showLv"/>
+
+</LinearLayout>

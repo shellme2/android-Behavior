@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/first_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/module_switch"
+            android:textColor="@android:color/holo_purple" />
+
+        <Switch
+            android:id="@+id/behaviorSwitch"
+            style="@style/moduleSwitch"
+            android:text="行为采集开关"
+            android:textOff="行为采集已经关闭"
+            android:textOn="行为采集已经开启" />
+
+        <Switch
+            android:id="@+id/autoSwitch"
+            style="@style/moduleSwitch"
+            android:text="APP自动采集页面切换开关"
+            android:textOff="APP自动采集页面切换关闭"
+            android:textOn="APP自动采集页面切换启" />
+
+        <Switch
+            android:id="@+id/cacheSwitch"
+            style="@style/moduleSwitch"
+            android:text="缓存开关"
+            android:textOff="缓存已经关闭"
+            android:textOn="缓存已经开启" />
+
+        <Switch
+            android:id="@+id/reportSwitch"
+            style="@style/moduleSwitch"
+            android:text="上报开关"
+            android:textOff="上报已经关闭"
+            android:textOn="上报已经开启" />
+
+        <Switch
+            android:id="@+id/debugModeSwitch"
+            style="@style/moduleSwitch"
+            android:text="Debug模式开关(会影响性能,严禁性能测试时候打开)"
+            android:textOff="Debug模式关闭"
+            android:textOn="Debug模式开启" />
+
+        <Switch
+            android:id="@+id/getLogSwitch"
+            style="@style/moduleSwitch"
+            android:text="获取日志信息开关"
+            android:textOff="获取日志信息关闭"
+            android:textOn="获取日志信息开启" />
+
+        <Switch
+            android:id="@+id/crash"
+            style="@style/moduleSwitch"
+            android:text="应用异常捕获开关"
+            android:textOff="应用异常捕获关闭"
+            android:textOn="应用异常捕获开启" />
+
+        <Switch
+            android:id="@+id/crash_toast"
+            style="@style/moduleSwitch"
+            android:text="应用异常捕获--toast显示开关"
+            android:textOff="应用异常捕获--toast显示关闭"
+            android:textOn="应用异常捕获--toast显示开启" />
+
+        <Switch
+            android:id="@+id/crash_ui"
+            style="@style/moduleSwitch"
+            android:text="应用异常捕获--界面显示开关"
+            android:textOff="应用异常捕获--界面显示关闭"
+            android:textOn="应用异常捕获--界面显示开启" />
+
+        <Switch
+            android:id="@+id/network_wifi"
+            style="@style/moduleSwitch"
+            android:text="网络设置--是否允许wifi下上报数据"
+            android:textOff="网络设置--不允许wifi"
+            android:textOn="网络设置--允许wifi" />
+
+        <Switch
+            android:id="@+id/network_mobile"
+            style="@style/moduleSwitch"
+            android:text="网络设置--是否允许移动网络(包括2G,3G,4G)下上报数据"
+            android:textOff="网络设置--不允许移动网络(可单独再设置)"
+            android:textOn="网络设置--允许移动网络(包括2G,3G,4G)" />
+
+        <!--<Switch-->
+            <!--android:id="@+id/network_mobile_2G"-->
+            <!--style="@style/moduleSwitch"-->
+            <!--android:text="网络设置&#45;&#45;是否允许2G下上报数据"-->
+            <!--android:textOff="网络设置&#45;&#45;不允许2G下上报数据"-->
+            <!--android:textOn="网络设置&#45;&#45;允许2G下上报数据" />-->
+
+        <!--<Switch-->
+            <!--android:id="@+id/network_mobile_3G"-->
+            <!--style="@style/moduleSwitch"-->
+            <!--android:text="网络设置&#45;&#45;是否允许3G下上报数据"-->
+            <!--android:textOff="网络设置&#45;&#45;不允许3G下上报数据"-->
+            <!--android:textOn="网络设置&#45;&#45;允许3G下上报数据" />-->
+
+        <!--<Switch-->
+            <!--android:id="@+id/network_mobile_4G"-->
+            <!--style="@style/moduleSwitch"-->
+            <!--android:text="网络设置&#45;&#45;是否允许4G下上报数据"-->
+            <!--android:textOff="网络设置&#45;&#45;不允许4G下上报数据"-->
+            <!--android:textOn="网络设置&#45;&#45;允许4G下上报数据" />-->
+
+    </LinearLayout>
+</ScrollView>

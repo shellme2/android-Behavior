@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">MobileBehaviorDemo</string>
+    <string name="back">back</string>
+
+    <string name="menu_event">使用演示</string>
+    <string name="menu_test">测试</string>
+    <string name="menu_error_code">错误码查询</string>
+    <string name="menu_query_local">查询app本地采集数据</string>
+    <string name="menu_query_config_local">查询app配置信息</string>
+    <string name="menu_crash">异常捕获测试</string>
+    <string name="log_view">打开日志采集界面</string>
+
+    <string name="click_event">计次事件</string>
+    <string name="count_event">计数事件</string>
+    <string name="custom_event">自定义事件</string>
+    <string name="search_event">搜索事件</string>
+    <string name="crash_event">触发异常捕获</string>
+    <string name="anr_event">触发ANR异常</string>
+    <string name="strict_mode_event">触发严苛模式</string>
+    <string name="native_crash_event">触发native异常</string>
+    <string name="bfc_behavior_crash_event">触发 bfc-behavior 异常</string>
+    <string name="bfc_common_crash_event">触发 bfc-common 异常</string>
+    <string name="bfc_uploadsdk_crash_event">触发 bfc-uploadsdk 异常</string>
+    <string name="real_time_upload">马上上传数据</string>
+
+    <string name="event_test">采集自定义参数测试</string>
+    <string name="page_test">页面切换计时测试</string>
+    <string name="page_test_enter_time">进入时间为:</string>
+    <string name="page_test_current_time">当前时间为:</string>
+    <string name="event_test_step_one">1.选择要测试的事件类型：</string>
+    <string name="event_test_step_two">2.填写参数：</string>
+    <string name="event_test_step_third">3.填写课本信息：</string>
+    <string name="event_test_step_fourth">4.填写用户信息：</string>
+
+    <string name="mode_test">上报和缓存模式功能测试</string>
+    <string name="process_test">多进程测试</string>
+    <string name="func_test">功能测试</string>
+    <string name="perf_test">性能测试</string>
+    <string name="stress_test">压力测试</string>
+    <string name="use_time_test">耗时测试</string>
+    <string name="succ_ratio_test">成功率测试</string>
+
+    <string name="insert_db">插入及时存库数据</string>
+    <string name="insert_cache">插入可以缓存数据</string>
+
+    <string name="stress_test_start">开始压力测试</string>
+    <string name="stress_test_stop">停止压力测试</string>
+
+    <string name="tip_show">演示各个采集事件如何使用：</string>
+
+    <string name="save">保存</string>
+    <string name="start">开始</string>
+    <string name="search">查询</string>
+    <string name="one_key_test">一键测试</string>
+    <string name="module_switch">模块开关</string>
+    <string name="large_char">超大字符测试</string>
+    <string name="log">日志查询</string>
+    <string name="clean_cache_log">清除缓存日志</string>
+    <string name="magnify">放大</string>
+    <string name="lessen">缩小</string>
+
+    <string name="user_time_test_times">2.请输入要测试的次数:</string>
+    <string name="user_time_test_one">方法一：测试某一方法耗时</string>
+    <string name="user_time_test_two">方法二：一键测试.一键测试所有方法</string>
+
+    <string name="error_code_edit">请输入要查询的错误码：</string>
+
+    <string name="large_char_str">循环的字符</string>
+    <string name="large_char_times">循环复制字符次数</string>
+    <string name="large_char_length">当前字符长度:0</string>
+    <string name="large_char_copy">循环复制字符</string>
+    <string name="large_char_copy_to_clip">把输入框内容复制到粘帖板</string>
+
+    <string name="search_all_log_in_sdcard">查询SD卡所有日志</string>
+
+    <string name="edit_tip">请输入要查询的app包名：</string>
+    <string name="refresh">刷新/显示</string>
+    <string name="item_dialog">选择采集数据要显示的字段</string>
+    <string name="export">导出报告</string>
+
+    <string name="block_canary_display_activity_label">Behavior Block</string>
+    <string name="leak_canary_display_activity_label">Behavior Leaks</string>
+
+</resources>

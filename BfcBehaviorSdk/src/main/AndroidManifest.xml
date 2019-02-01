@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eebbk.bfc.sdk.behavior">
+
+    <!-- 允许程序读取或写入系统设置 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!-- 读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- 读取系统日志 -->
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <!-- 允许程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- custom -->
+    <!--&lt;!&ndash; 允许程序访问有关GSM网络信息 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--&lt;!&ndash; 允许程序改变Wi-Fi连接状态 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+    <!--&lt;!&ndash; 允许程序访问Wi-Fi网络状态信息 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!-- 允许程序访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Upload System End -->
+
+    <application>
+
+        <!-- DA BEGIN -->
+
+        <meta-data
+            android:name="BFC_BEHAVIOR_HOST_APP_ID"
+            android:value="${applicationId}" />
+
+         <!--DA数据库 -->
+        <provider
+            android:name=".db.provider.UserBehaviorProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="true">
+        </provider>
+
+        <!-- 跟踪查询数据服务 -->
+        <service
+            android:name=".QueryRemoteService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.behavior.QueryRemoteService" />
+            </intent-filter>
+        </service>
+
+        <!-- aidl埋点服务 -->
+        <service
+            android:name=".BehaviorRemoteService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.behavior.BehaviorRemoteService" />
+            </intent-filter>
+        </service>
+
+        <!-- 定时上报模式广播 -->
+        <receiver
+            android:name=".report.upload.receivers.FixOrPushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.eebbk.sdk.datacollect.action.fixtimetriger" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 异常界面 -->
+        <activity
+            android:name="com.eebbk.bfc.sdk.behavior.exception.CrashReportActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="CrashReportActivity" />
+
+        <!-- 用户体验计划广播 先屏蔽,避免一开打就拉起所有应用,之后弄成动态开关 -->
+        <!--<receiver-->
+            <!--android:name="com.eebbk.bfc.sdk.behavior.userplan.UserPlanChangeReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="user_plan_change_action" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!-- DA END -->
+    </application>
+</manifest>

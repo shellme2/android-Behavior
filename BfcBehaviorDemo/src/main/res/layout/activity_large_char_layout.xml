@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/first_title"
+            android:text="@string/large_char"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_purple" />
+
+        <TextView
+            android:text="*此功能为辅助功能,请设置合理循环次数.如果字数太多,会导致内存溢出卡死"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"/>
+
+        <TextView
+            style="@style/title"
+            android:text="@string/large_char_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/strEv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:lines="7"/>
+
+        <TextView
+            style="@style/title"
+            android:text="@string/large_char_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/timesEv"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/large_char_length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/strLengthTv" />
+
+        <Button
+            android:text="@string/large_char_copy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onLoopCopy"/>
+
+        <Button
+            android:text="@string/large_char_copy_to_clip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCopy2Clip"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tipTv" />
+    </LinearLayout>
+</ScrollView>
